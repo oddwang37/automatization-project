@@ -1,6 +1,9 @@
 import { RowActions } from 'components/RowActions';
 import './ProjectTable.styles.sass';
 
+import { TableRow} from './components';
+import { TableInput } from 'components/ui/TableInput';
+
 export default function ProjectTable() {
   return (
     <div className="project-table">
@@ -15,36 +18,43 @@ export default function ProjectTable() {
             <th>Накладные расходы</th>
             <th>Сметная прибыль</th>
           </tr>
-          <tr className="project-table__row">
-            <td>
-              <RowActions layer="first" />
-            </td>
-            <td>Название</td>
-            <td>12</td>
-            <td>13 600</td>
-            <td>8</td>
-            <td>123, 213</td>
-          </tr>
-          <tr className="project-table__row">
-            <td>
-              <RowActions layer="second" />
-            </td>
-            <td>Название</td>
-            <td>12</td>
-            <td>13 600</td>
-            <td>8</td>
-            <td>123, 213</td>
-          </tr>
-          <tr className="project-table__row">
-            <td>
-              <RowActions layer="entity" isEditMode />
-            </td>
-            <td>Название</td>
-            <td>12</td>
-            <td>13 600</td>
-            <td>8</td>
-            <td>123, 213</td>
-          </tr>
+          <TableRow
+          	level={1}
+          	title="Южная строительная площадка"
+          	salary={20348}
+          	equipment={1750}
+          	overheads={108.07}
+          	income={1209123.2}
+          	isEditable={false}
+          />
+          <TableRow
+          	level={2}
+          	title="Южная строительная площадка"
+          	salary={20348}
+          	equipment={1750}
+          	overheads={108.07}
+          	income={1209123.2}
+          	isEditable={false}
+          />
+           <TableRow
+          	level={0}
+          	title="Южная строительная площадка"
+          	salary={20348}
+          	equipment={1750}
+          	overheads={108.07}
+          	income={1209123.2}
+          	isEditable={true}
+          />
+          <TableRow
+          	level={0}
+          	title="Южная строительная площадка"
+          	salary={20348}
+          	equipment={1750}
+          	overheads={108.07}
+          	income={1209123.2}
+          	isEditable={false}
+          	isLastOnSameLevel
+          />
         </table>
       </div>
     </div>

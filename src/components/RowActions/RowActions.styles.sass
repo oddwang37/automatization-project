@@ -36,24 +36,32 @@
 		display: block
 	// before - vertical line
 	// after - horizontal line
-	&--first
+	&--level-1
 		&::before
 			@include vertical-line
-	&--second
+	&--level-2
 		width: 80px
 		margin-left: 20px
 		&::before
 			@include vertical-line
 		&::after
 			@include horizontal-line
-	&--entity
+			left: -14px
+	&--level-0
 		width: 54px
 		margin-left: 39px
 		&::after
 			@include horizontal-line
+			left: -12.5px
 	&--is-last
 		&::before
 			display: none
+	&--is-last-on-level
+		&::before
+			@include vertical-line
+			left: -7px
+			top: -47px
+			height: 60px
 	&--is-edit-mode
 		background-color: #414144
 		svg
