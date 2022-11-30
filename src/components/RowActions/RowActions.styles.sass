@@ -21,7 +21,6 @@
 	transform: translateY(50%) translateX(50%)
 	
 .row-actions
-	background-color: #414144
 	display: flex
 	align-items: center
 	border-radius: 4px
@@ -30,6 +29,11 @@
 	width: 107px
 	position: relative
 	z-index: 2
+	background-color: rgba(0, 0, 0, 0)
+	svg
+		display: none
+	svg:nth-child(1)
+		display: block
 	// before - vertical line
 	// after - horizontal line
 	&--first
@@ -50,6 +54,10 @@
 	&--is-last
 		&::before
 			display: none
+	&--is-edit-mode
+		background-color: #414144
+		svg
+			display: block
 	svg
 		cursor: pointer
 	

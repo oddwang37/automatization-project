@@ -37,7 +37,7 @@ export default function ProjectTable() {
           </tr>
           <tr className="project-table__row">
             <td>
-              <RowActions layer="entity" />
+              <RowActions layer="entity" isEditMode />
             </td>
             <td>Название</td>
             <td>12</td>
