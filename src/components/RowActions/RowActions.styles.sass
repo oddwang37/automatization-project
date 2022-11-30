@@ -1,0 +1,55 @@
+@mixin vertical-line
+	content: ''
+	display: block
+	position: absolute
+	width: 1px
+	height: 55px
+	left: 12px
+	top: 18px
+	background-color: #fff
+	z-index: -1
+
+@mixin horizontal-line
+	content: ''
+	display: block
+	position: absolute
+	width: 11px
+	height: 1px
+	background-color: #fff
+	left: -13px
+	top: 50%
+	transform: translateY(50%) translateX(50%)
+	
+.row-actions
+	background-color: #414144
+	display: flex
+	align-items: center
+	border-radius: 4px
+	gap: 6px
+	width: auto
+	width: 107px
+	position: relative
+	z-index: 2
+	// before - vertical line
+	// after - horizontal line
+	&--first
+		&::before
+			@include vertical-line
+	&--second
+		width: 80px
+		margin-left: 20px
+		&::before
+			@include vertical-line
+		&::after
+			@include horizontal-line
+	&--entity
+		width: 54px
+		margin-left: 39px
+		&::after
+			@include horizontal-line
+	&--is-last
+		&::before
+			display: none
+	svg
+		cursor: pointer
+	
